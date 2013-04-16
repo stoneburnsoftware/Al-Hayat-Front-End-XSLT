@@ -6414,13 +6414,35 @@ SHAHID MIRZA END OF HIDING DEFAULT SORT BY -->
 						<td>
 							<a href="javascript:window.open(%22http://www.facebook.com/sharer.php?u={$full_url}&amp;t={T}%22,'_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600')"><img src="http://daharchives.alhayat.com/images/f_logo.png" alt="Share on Facebook" height="25px" width="25px"/></a>
 						</td>
-						<td>
-							<a href="javascript:window.open(%22http://twitter.com/share?url={$full_url}%22,'_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600')"><img src="http://daharchives.alhayat.com/images/t_logo.png" alt="Share on Twitter" height="25px" width="25px"/></a>
-							<a href="https://twitter.com/share" class="twitter-share-button" data-url="{$full_url}" data-text="{T}" data-count="none"><img src="http://daharchives.alhayat.com/images/t_logo.png" alt="Share on Twitter" height="25px" width="25px"/></a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						<td class="s_link">
+							<a class="twitter_sl" title="{$full_url}" name="{T}"><img src="http://daharchives.alhayat.com/images/t_logo.png" alt="Share on Twitter" height="25px" width="25px"/></a>
+
+
+<script>
+$('.s_link').find('a.twitter_sl').css('cursor', 'pointer');
+$('.s_link').find('a.twitter_sl').click(function(){
+var twitterOrigURL = $(this).attr('title').replace(/\%20/g, '%2520'),
+    twitterURL = twitterOrigURL,
+    twitterText = $(this).attr('name');
+
+window.open('http://www.twitter.com/share?text='+twitterText+'&amp;url='+twitterURL,'_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=250,width=600');
+});
+</script>
 						</td>
-						<td>
-							<a href="javascript:window.open(%22https://plus.google.com/share?url={$full_url}%22,'_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600')"><img src="http://daharchives.alhayat.com/images/g_logo.png" alt="Share on Google Plus" height="25px" width="25px"/></a>
+						<td class="s_link">
+							<a class="google_sl" title="{$full_url}" name="{T}">
+<img src="http://daharchives.alhayat.com/images/g_logo.png" alt="Share on Google Plus" height="25px" width="25px"/></a>
+
+<script>
+$('.s_link').find('a.google_sl').css('cursor', 'pointer');
+$('.s_link').find('a.google_sl').click(function(){
+var googleOrigURL = $(this).attr('title').replace(/\%20/g, '%2520'),
+    googleURL = googleOrigURL,
+    googleText = $(this).attr('name');
+
+window.open('https://plus.google.com/share?url='+googleURL,'_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=250,width=600');
+});
+</script>
 						</td>
 					</tr>
 				</table>
