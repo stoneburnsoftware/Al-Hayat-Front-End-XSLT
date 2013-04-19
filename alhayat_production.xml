@@ -4728,6 +4728,7 @@ for (var j = 1; j &lt; p.length; j++) { url += "&amp;" + p[j]; }}
               </xsl:when>
               <xsl:otherwise>
                 <input type="image" name="btnG" class="search_image" src="http://www.shahidmirzadesign.co.uk/stoneburn/alhayat/images/search.jpg" alt="{$search_button_text}"/>
+                <input type="hidden" name="filter" id="filter" value="0" />
               </xsl:otherwise>
               </xsl:choose>
           </font>
